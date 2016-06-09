@@ -1,6 +1,6 @@
 {
   "name": "html-2-react",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Converts HTML to React elements.",
   "main": "index.js",
   "scripts": {
