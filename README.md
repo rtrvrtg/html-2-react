@@ -33,6 +33,27 @@ var MyComponent = React.createClass({
 });
 ```
 
+### Usage within browsers
+
+If you use the distribution version of this library from `dist/html-2-react.js`, and don't want to have to build your app using Browserify or Webpack or whatever, you can use the `window.html2React` or `html2React` function instead of using the `require` statement above. The equivalent is as follows:
+
+```jsx
+var MyComponent = React.createClass({
+  render: function() {
+    var parsed = new html2React(this.props.htmlcontent),
+        reactElems = [];
+    if (parsed.success()) {
+      reactElems = parsed.toReact();
+    }
+    return (
+      <div>
+        {reactElems}
+      </div>
+    );
+  }
+});
+```
+
 ## Build instructions
 
 `gulp dist`
