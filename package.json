@@ -1,0 +1,22 @@
+{
+  "name": "html-2-react",
+  "version": "0.0.1",
+  "description": "Converts HTML to React elements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rtrvrtg/html-2-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Geoffrey Roberts <g.roberts@blackicemedia.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rtrvrtg/html-2-react/issues"
+  },
+  "homepage": "https://github.com/rtrvrtg/html-2-react"
+}
