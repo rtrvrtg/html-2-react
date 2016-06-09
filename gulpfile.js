@@ -3,11 +3,22 @@ var gulp = require('gulp'),
 	source = require('vinyl-source-stream');
 
 gulp.task('dist', function(cb) {
-	return browserify('./index.js')
-	.ignore('jquery')
-	.ignore('react')
-	.ignore('react-router')
-	.bundle()
+	var browserifyBundle = function() {
+		var b = browserify('./index.js', {
+			standalone: 'html-2-react',
+			debug: true
+		});
+		b.transform('exposify', {
+			expose: {
+				"jquery": "jQuery",
+				"react": "React",
+				"react-router": "ReactRouter"
+			}
+		})
+		return b.bundle();
+	};
+
+	return browserifyBundle()
 	.pipe(
 		source('html-2-react.js')
 	)

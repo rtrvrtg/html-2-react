@@ -8,6 +8,7 @@ Designed to work within the browser, but should work anywhere.
 
 * React (of course)
 * jQuery (for parsing the HTML)
+* Gulp (for development only)
 
 ## Usage
 
@@ -31,6 +32,10 @@ var MyComponent = React.createClass({
   }
 });
 ```
+
+## Build instructions
+
+`gulp dist`
 
 ## @TODO
 
