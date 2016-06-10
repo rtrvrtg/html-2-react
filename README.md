@@ -9,6 +9,7 @@ Designed to work within the browser, but should work anywhere.
 * React (of course)
 * jQuery (for parsing the HTML)
 * Gulp (for development only)
+* React Router (when using the React Router mutator)
 
 ## Usage
 
@@ -54,13 +55,61 @@ var MyComponent = React.createClass({
 });
 ```
 
+### Mutating elements before converting to React
+
+Before you convert your markup to React elements, it may be useful to mutate some of the elements along the way. To this end, there's a function exposed on Html2React named `mutateEach`, which will run a function across every element in the parsed tree.
+
+Below, we have an example that uses the built-in `reactRouterLink` mutator, which converts `<a>` tags to React Router Link elements.
+
+```jsx
+var parsed = new html2React(this.props.htmlcontent),
+    reactElems = [];
+if (parsed.success()) {
+  parsed.mutateEach(parsed.mutators.reactRouterLink);
+  reactElems = parsed.toReact();
+}
+```
+
+Writing your own mutator is pretty easy. You'd define one and run it like so:
+
+```jsx
+function myMutator(elem) {
+  if (this.isDomNode(elem)) {
+    if (elem.nodeName == 'strong') {
+      if (!elem.attributes.className) {
+        elem.attributes.className = 'beefy';
+      }
+      else {
+        elem.attributes.className += ' bold';
+      }
+    }
+  }
+}
+
+var parsed = new html2React(this.props.htmlcontent),
+    reactElems = [];
+if (parsed.success()) {
+  parsed.mutateEach(myMutator);
+  reactElems = parsed.toReact();
+}
+```
+
+See how you can call `isDomNode` to determine if a current element is a valid element, before checking against its `nodeName`?
+
+Whenever you're using a mutator, and are working with a valid DomNode, you can mutate the following properties:
+
+* `nodeName`
+* `attributes`
+* `children`
+
+If you just have a string, you're dealing with a text node.
+
 ## Build instructions
 
 `gulp dist`
 
 ## @TODO
 
-* Allow selective enabling of ReactRouter link support
 * Filtering of dangerous tags such as `<script>`
 * Write some tests!
 * Write some examples, especially backend ones!
