@@ -1,5 +1,7 @@
 # html-2-react
 
+[![npm version](https://badge.fury.io/js/html-2-react.svg)](https://badge.fury.io/js/html-2-react)
+
 Converts HTML to React elements.
 
 Designed to work within the browser, but should work anywhere.
@@ -76,6 +78,9 @@ Writing your own mutator is pretty easy. You'd define one and run it like so:
 function myMutator(elem) {
   if (this.isDomNode(elem)) {
     if (elem.nodeName == 'strong') {
+      if (!elem.attributes) {
+        elem.attributes = {};
+      }
       if (!elem.attributes.className) {
         elem.attributes.className = 'beefy';
       }
