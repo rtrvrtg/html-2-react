@@ -1,5 +1,9 @@
 # Version History
 
+## 1.1.0
+
+* Added default mutators
+
 ## 1.0.1
 
 * Expose mutators
