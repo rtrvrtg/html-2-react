@@ -111,7 +111,9 @@ If you just have a string, you're dealing with a text node.
 
 ### Options
 
-* `useDefaultMutators` - html-2-react comes with a set of default mutators that helps automatically transform elements into a more React-friendly form. If set to `true`, these mutators are run when the elements are first parsed. Default: `true`
+* `useDefaultMutators`  
+  html-2-react comes with a set of default mutators that helps automatically transform elements into a more React-friendly form. If set to `true`, these mutators are run when the elements are first parsed.  
+  Default: `true`
 
 ## Build instructions
 
