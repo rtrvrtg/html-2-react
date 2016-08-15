@@ -1,5 +1,9 @@
 # Version History
 
+## 1.1.2
+
+Fixed assignment bug
+
 ## 1.1.1
 
 Fixed whitespace bug
