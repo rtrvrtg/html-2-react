@@ -1,5 +1,9 @@
 # Version History
 
+## 1.1.1
+
+Fixed whitespace bug
+
 ## 1.1.0
 
 * Added default mutators
