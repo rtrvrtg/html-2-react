@@ -1,5 +1,9 @@
 # html-2-react
 
+**NOTICE:** Just so you know, I probably won't be updating this any further. Try [html-react-parser](https://github.com/remarkablemark/html-react-parser) instead.
+
+## Original intro
+
 [![npm version](https://badge.fury.io/js/html-2-react.svg)](https://badge.fury.io/js/html-2-react)
 
 Converts HTML to React elements.
